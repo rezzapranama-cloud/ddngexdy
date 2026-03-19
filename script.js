@@ -6,14 +6,15 @@
 const BIN_ID  = '69bb82b4c3097a1dd53b1183';
 const API_KEY = '$2a$10$EH5wMNiP2eUOvb78.6D0OuBfdNlw.qlmOcZSacTGOYaL9rsup9poq';
 
-let MODS = [
+const MODS = [
   {
     nama:      "SKIN GANGSTA UNDERSHIRT",
     kategori:  "Skin",
-    deskripsi: "Pembuat Ddngexdy. Skin bagus untuk Roleplay Gangster maupun biasa.",
-    foto:      "foto/ddx.png",
-    file:      "skin/Skin Bagus Dxd 6.7z",
-    ukuran:    "4.6 MB",
+    deskripsi: "Pembuat Ddngexdy 
+Skin bagus untuk Roleplay Gangster maupun biasa",
+    foto:      "foto/skin-gangsta-undershirt.png",
+    file:      "skin/skin/Skin Bagus Dxd 6.7z",
+    ukuran:    "4.6MB",
     badge:     "badge-new",
   }
 ];
