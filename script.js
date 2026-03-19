@@ -11,7 +11,7 @@ let MODS = [
     nama:      "SKIN GANGSTA UNDERSHIRT",
     kategori:  "Skin",
     deskripsi: "Pembuat Ddngexdy. Skin bagus untuk Roleplay Gangster maupun biasa.",
-    foto:      "foto/skin-gangsta-undershirt.jpg",
+    foto:      "foto/ddx.png",
     file:      "skin/Skin Bagus Dxd 6.7z",
     ukuran:    "4.6 MB",
     badge:     "badge-new",
