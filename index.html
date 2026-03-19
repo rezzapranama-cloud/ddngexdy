@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ddngexdy — Skin · Pose · Animasi</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+  /* ══════════════════════════════════════
+     RESPONSIVE FIX — Full Layar Android & Laptop
+     ══════════════════════════════════════ */
+
+  /* Base — semua layar */
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* ── LAPTOP / DESKTOP (> 1024px) ── */
+  @media (min-width: 1025px) {
+    .nav-inner {
+      padding: 0 48px;
+    }
+    .hero {
+      padding: 80px 80px;
+      min-height: 92vh;
+      max-width: 100%;
+      margin: 0;
+    }
+    .section-inner {
+      padding: 90px 60px;
+      max-width: 100%;
+    }
+    .cat-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .tut-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-inner {
+      padding: 60px 60px 40px;
+    }
+  }
+
+  /* ── TABLET (768px - 1024px) ── */
+  @media (max-width: 1024px) {
+    .hero {
+      grid-template-columns: 1fr !important;
+      padding: 60px 32px !important;
+      text-align: center;
+      min-height: auto;
+    }
+    .hero-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-visual { display: none !important; }
+    .hero-stats  { justify-content: center; flex-wrap: wrap; gap: 20px; }
+    .nav-links   { display: none !important; }
+    .nav-inner   { padding: 0 24px; }
+    .nav-search  { width: 140px !important; }
+    .section-inner { padding: 70px 32px; }
+    .cat-grid  { grid-template-columns: repeat(3, 1fr); }
+    .tut-grid  { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; padding: 50px 32px 30px; }
+    .mods-header { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ── ANDROID / HP (< 768px) ── */
+  @media (max-width: 767px) {
+    /* Navbar */
+    .nav-inner {
+      padding: 0 16px;
+      height: 56px;
+    }
+    .nav-links  { display: none !important; }
+    .nav-search { display: none !important; }
+    .online-badge { font-size: .68rem; }
+    .logo-text { font-size: .88rem !important; }
+
+    /* Hero */
+    .hero {
+      grid-template-columns: 1fr !important;
+      padding: 48px 16px 56px !important;
+      text-align: center;
+      min-height: auto !important;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-visual { display: none !important; }
+    .hero-eyebrow { font-size: .65rem; }
+    .ht-line { font-size: clamp(1.5rem, 7vw, 2.4rem) !important; }
+    .hero-desc {
+      font-size: .9rem;
+      text-align: center;
+    }
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-primary, .btn-ghost {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+    .hero-stats {
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 24px;
+      margin-top: 28px;
+    }
+    .hs-num { font-size: 1.3rem !important; }
+
+    /* Marquee */
+    .marquee-track span { font-size: .68rem; padding: 0 14px; }
+
+    /* Section */
+    .section-inner { padding: 48px 16px; }
+    .sec-title { font-size: 1.4rem !important; }
+
+    /* Kategori */
+    .cat-grid {
+      grid-template-columns: 1fr !important;
+      gap: 12px;
+    }
+    .cat-card { padding: 18px 16px; flex-direction: row; align-items: center; gap: 14px; }
+    .cat-arrow { position: static !important; transform: none !important; margin-left: auto; }
+
+    /* Mod grid */
+    .mod-grid {
+      grid-template-columns: 1fr !important;
+      gap: 14px;
+    }
+    .mods-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .filter-wrap { flex-wrap: wrap; gap: 7px; }
+    .filter-btn { padding: 6px 13px; font-size: .72rem; }
+
+    /* Tutorial */
+    .tut-grid {
+      grid-template-columns: 1fr !important;
+      gap: 12px;
+    }
+    .tut-card { padding: 20px 16px; }
+
+    /* Modal */
+    .modal-box {
+      padding: 20px 16px;
+      margin: 12px;
+      width: calc(100% - 24px) !important;
+      max-width: 100% !important;
+    }
+
+    /* Footer */
+    .footer-inner {
+      grid-template-columns: 1fr !important;
+      padding: 40px 16px 24px !important;
+      gap: 28px !important;
+    }
+    .footer-bottom { padding: 16px 16px; font-size: .68rem; }
+
+    /* Back to top & Toast */
+    #btt   { bottom: 16px; left: 16px; width: 36px; height: 36px; }
+    #toast { bottom: 16px; right: 16px; max-width: calc(100vw - 32px); font-size: .76rem; }
+
+    /* Lightbox */
+    #lb-img { max-height: 65vh !important; }
+  }
+
+  /* ── HP KECIL (< 380px) ── */
+  @media (max-width: 380px) {
+    .ht-line { font-size: 1.4rem !important; }
+    .hero-desc { font-size: .82rem; }
+    .btn-primary, .btn-ghost { font-size: .8rem; padding: 11px 20px; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <!-- BACK TO TOP -->
+  <button id="btt" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <!-- MODAL -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-img-wrap">
+        <img id="modalImg" src="" alt=""/>
+        <div class="modal-img-ph" id="modalImgPh">
+          <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z"/></svg>
+        </div>
+      </div>
+      <div class="modal-cat" id="modalCat"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-meta" id="modalMeta"></div>
+      <a class="modal-dl" id="modalDl" href="#" download>
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Download Sekarang
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-mark">
+          <span class="lm-line"></span>
+          <span class="lm-dot"></span>
+          <span class="lm-line"></span>
+        </div>
+        <span class="logo-text"><span>Ddng</span>exdy</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#mods">Mod</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#tutorial">Tutorial</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="online-badge">
+          <span class="online-dot"></span>
+          Online
+        </div>
+        <input type="text" id="navSearch" class="nav-search" placeholder="Cari mod…" oninput="searchMods(this.value)"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+    <div class="hero-particles" id="particles"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-tick"></span>
+        GTA San Andreas Mod Collection
+        <span class="eyebrow-tick"></span>
+      </div>
+      <h1 class="hero-title">
+        <span class="ht-line">Koleksi Skin,</span>
+        <span class="ht-line accent">Pose &amp; Animasi</span>
+        <span class="ht-line">GTA SA Terbaik</span>
+      </h1>
+      <p class="hero-desc">
+        Download skin karakter, mod pose, dan animasi gerakan untuk GTA San Andreas.<br/>
+        Gratis, aman, tanpa iklan. Update setiap minggu.
+      </p>
+      <div class="hero-actions">
+        <a href="#mods" class="btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Lihat Semua Mod
+        </a>
+        <a href="#tutorial" class="btn-ghost">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          Cara Install
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hs-item">
+          <span class="hs-num" id="statTotal">0</span>
+          <span class="hs-lbl">Total Mod</span>
+        </div>
+        <div class="hs-div"></div>
+        <div class="hs-item">
+          <span class="hs-num" id="statSkin">0</span>
+          <span class="hs-lbl">Skin</span>
+        </div>
+        <div class="hs-div"></div>
+        <div class="hs-item">
+          <span class="hs-num" id="statPose">0</span>
+          <span class="hs-lbl">Pose</span>
+        </div>
+        <div class="hs-div"></div>
+        <div class="hs-item">
+          <span class="hs-num" id="statAnim">0</span>
+          <span class="hs-lbl">Animasi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hv-frame">
+        <div class="hv-screen">
+          <img src="foto/hero-banner.jpg" alt="GTA SA Mod" onerror="this.style.display='none'"/>
+          <div class="hv-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z"/></svg>
+            <span>hero-banner.jpg</span>
+          </div>
+        </div>
+        <div class="hv-corner tl"></div>
+        <div class="hv-corner tr"></div>
+        <div class="hv-corner bl"></div>
+        <div class="hv-corner br"></div>
+        <div class="hv-scan"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>Skin Karakter</span><i></i>
+      <span>Pose Kustom</span><i></i>
+      <span>Animasi Walk</span><i></i>
+      <span>Animasi Fight</span><i></i>
+      <span>Skin NPC</span><i></i>
+      <span>CLEO Script</span><i></i>
+      <span>Gratis 100%</span><i></i>
+      <span>Tanpa Virus</span><i></i>
+      <span>Update Rutin</span><i></i>
+      <span>Skin Karakter</span><i></i>
+      <span>Pose Kustom</span><i></i>
+      <span>Animasi Walk</span><i></i>
+      <span>Animasi Fight</span><i></i>
+      <span>Skin NPC</span><i></i>
+      <span>CLEO Script</span><i></i>
+      <span>Gratis 100%</span><i></i>
+      <span>Tanpa Virus</span><i></i>
+      <span>Update Rutin</span><i></i>
+    </div>
+  </div>
+
+  <!-- ═══ KATEGORI ═══ -->
+  <section id="kategori" class="section">
+    <div class="section-inner">
+      <div class="sec-label reveal">All MOD</div>
+      <h2 class="sec-title reveal">Kategori <span>Mod</span></h2>
+      <div class="cat-grid">
+        <div class="cat-card reveal" onclick="filterMods('Skin', this)">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="cat-name">Skin</div>
+          <div class="cat-count" id="catSkin">0 Mod</div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card reveal" onclick="filterMods('Pose', this)">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>
+          </div>
+          <div class="cat-name">Pose</div>
+          <div class="cat-count" id="catPose">0 Mod</div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card reveal" onclick="filterMods('Animasi', this)">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="cat-name">Animasi</div>
+          <div class="cat-count" id="catAnim">0 Mod</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MOD GRID ═══ -->
+  <section id="mods" class="section mods-section">
+    <div class="section-inner">
+      <div class="mods-header">
+        <div>
+          <div class="sec-label reveal">Collection</div>
+          <h2 class="sec-title reveal">Semua <span>Mod</span></h2>
+        </div>
+        <div class="filter-wrap reveal">
+          <button class="filter-btn active" onclick="filterMods('Semua', this)">Semua</button>
+          <button class="filter-btn" onclick="filterMods('Skin', this)">Skin</button>
+          <button class="filter-btn" onclick="filterMods('Pose', this)">Pose</button>
+          <button class="filter-btn" onclick="filterMods('Animasi', this)">Animasi</button>
+        </div>
+      </div>
+
+      <div class="mod-grid" id="modGrid">
+        <!-- Dirender oleh script.js -->
+      </div>
+
+      <div id="emptyState" class="empty-state" style="display:none">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        <p>Belum ada mod</p>
+        <span>Tambah mod di sini <strong></strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TUTORIAL ═══ -->
+  <section id="tutorial" class="section tutorial-section">
+    <div class="section-inner">
+      <div class="sec-label reveal">Panduan</div>
+      <h2 class="sec-title reveal">Cara <span>Install</span> Mod</h2>
+      <div class="tut-grid">
+        <div class="tut-card reveal">
+          <div class="tut-num">01</div>
+          <div class="tut-icon"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></div>
+          <h3>Download File</h3>
+          <p>Klik tombol download pada mod yang kamu inginkan. File akan terunduh dalam format .rar atau .zip.</p>
+        </div>
+        <div class="tut-card reveal">
+          <div class="tut-num">02</div>
+          <div class="tut-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.86.18-1.3C18 2.55 15.45 1 12.5 1c-1.5 0-2.84.5-3.83 1.33L7 4H4c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.11-.89-2-2-2z"/></svg></div>
+          <h3>Extract File</h3>
+          <p>Extract menggunakan WinRAR atau 7-Zip. Backup folder GTA SA kamu terlebih dahulu sebelum install.</p>
+        </div>
+        <div class="tut-card reveal">
+          <div class="tut-num">03</div>
+          <div class="tut-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
+          <h3>Install Skin</h3>
+          <p>Untuk skin (.txd/.dff): Buka IMG Tool v2, import file ke <code>player.img</code> di folder GTA SA.</p>
+        </div>
+        <div class="tut-card reveal">
+          <div class="tut-num">04</div>
+          <div class="tut-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <h3>Install Animasi</h3>
+          <p>Untuk pose/animasi (.ifp/.cs): Salin ke folder <code>anim/</code> atau <code>CLEO/</code>. Butuh CLEO Library 4.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text"><span>Ddng</span>exdy</span>
+        <p>Website mod GTA San Andreas. Koleksi skin, pose, dan animasi terlengkap. Gratis, aman, update rutin.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Kategori</div>
+        <a href="#" onclick="filterMods('Skin')">Skin Karakter</a>
+        <a href="#" onclick="filterMods('Pose')">Pose Mod</a>
+        <a href="#" onclick="filterMods('Animasi')">Animasi</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Tools</div>
+        <a href="#">IMG Tool v2.0</a>
+        <a href="#">CLEO Library 4</a>
+        <a href="#">TXD Workshop</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ddngexdy.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
