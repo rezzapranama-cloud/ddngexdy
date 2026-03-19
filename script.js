@@ -23,7 +23,6 @@ async function loadMods() {
   updateStats();
   spawnParticles();
 }
-const MODS = [
   {
     nama:      "SKIN GANGSTA UNDERSHIRT",
     kategori:  "Skin",
