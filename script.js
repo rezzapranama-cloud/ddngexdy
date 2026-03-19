@@ -20,9 +20,7 @@ const MODS = [
   {
     nama:      "SKIN GANGSTA TATTOOED",
     kategori:  "Skin",
-    deskripsi: "Pembuat Ddngexdy 
-
-Cocok Untuk Roleplay Gangster",
+    deskripsi: "Pembuat Ddngexdy Cocok Untuk Roleplay Gangster",
     foto:      "foto/skin-gangsta-tattooed.jpg",
     file:      "skin/skin/Skin Bagus dxd 5.7z",
     ukuran:    "2.65 MB",
