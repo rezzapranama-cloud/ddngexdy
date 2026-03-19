@@ -17,7 +17,17 @@ const MODS = [
     ukuran:    "4.6 MB",
     badge:     "badge-new",
   },
+  {
+    nama:      "SKIN GANGSTA TATTOOED",
+    kategori:  "Skin",
+    deskripsi: "Pembuat Ddngexdy 
 
+Cocok Untuk Roleplay Gangster",
+    foto:      "foto/skin-gangsta-tattooed.jpg",
+    file:      "skin/skin/Skin Bagus dxd 5.7z",
+    ukuran:    "2.65 MB",
+    badge:     "badge-update",
+  }
 ];
 
 function loadMods() {
