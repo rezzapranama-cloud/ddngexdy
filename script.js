@@ -27,7 +27,7 @@ Cocok Untuk Roleplay Gangster",
     file:      "skin/skin/Skin Bagus dxd 5.7z",
     ukuran:    "2.65 MB",
     badge:     "badge-update",
-  }
+  },
 ];
 
 function loadMods() {
