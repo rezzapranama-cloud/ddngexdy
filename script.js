@@ -23,6 +23,18 @@ async function loadMods() {
   updateStats();
   spawnParticles();
 }
+const MODS = [
+  {
+    nama:      "SKIN GANGSTA UNDERSHIRT",
+    kategori:  "Skin",
+    deskripsi: "Pembuat Ddngexdy 
+Skin bagus untuk Roleplay Gangster maupun biasa",
+    foto:      "foto/skin-gangsta-undershirt.jpg",
+    file:      "skin/skin/Skin Bagus Dxd 6.7z",
+    ukuran:    "4.6MB",
+    badge:     "badge-new",
+  }
+];
 
 /* ══════════════════════════════════════
    JANGAN UBAH KODE DI BAWAH INI
